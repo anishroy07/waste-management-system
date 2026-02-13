@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' rel='stylesheet'>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        // Load the corechart package
+        google.charts.load('current', { packages: ['corechart'] });
+
+        // Define the data for the charts
+        const wasteData = [
+            ['Category', 'Value'],
+            ['Dry Waste', 30],
+            ['Wet Waste', 45],
+            ['Plastic Waste', 25]
+        ];
+
+        // --- CHART DRAWING FUNCTIONS ---
+
+        function drawPieChart() {
+            const data = google.visualization.arrayToDataTable(wasteData);
+
+            const options = {
+                title: 'Waste Composition Analysis (Pie Chart)',
+                pieHole: 0.4,
+                width: '100%',
+                height: 350,
+                colors: ['#1e88e5', '#ef5350', '#ffa726'] // Matching visual scheme
+            };
+
+            // Draws the chart into its specific container
+            const chart = new google.visualization.PieChart(document.getElementById('piechart-container'));
+            chart.draw(data, options);
+        }
+
+        function drawBarChart() {
+            const data = google.visualization.arrayToDataTable(wasteData);
+
+            const options = {
+                title: 'Waste Composition Analysis (Bar Graph)',
+                legend: { position: 'none' },
+                width: '100%',
+                height: 350,
+                hAxis: { title: 'Percentage (%)' },
+                vAxis: { title: 'Waste Type' },
+                colors: ['#1e88e5', '#ef5350', '#ffa726']
+            };
+
+            // Draws a horizontal Bar Chart
+            const chart = new google.visualization.BarChart(document.getElementById('bar-chart-container'));
+            chart.draw(data, options);
+        }
+
+        function drawColumnChart() {
+            const data = google.visualization.arrayToDataTable(wasteData);
+
+            const options = {
+                title: 'Waste Composition Analysis (Column Chart)',
+                legend: { position: 'none' },
+                width: '100%',
+                height: 350,
+                vAxis: { title: 'Percentage (%)' },
+                hAxis: { title: 'Waste Type' },
+                colors: ['#1e88e5', '#ef5350', '#ffa726']
+            };
+
+            // Draws a vertical Column Chart
+            const chart = new google.visualization.ColumnChart(document.getElementById('column-chart-container'));
+            chart.draw(data, options);
+        }
+
+
+        // --- INITIAL SETUP AND TOGGLE LOGIC ---
+
+        google.charts.setOnLoadCallback(() => {
+            // Draw the initial chart (Pie Chart)
+            drawPieChart();
+
+            const selector = document.getElementById('chart-selector');
+            const pieChartDiv = document.getElementById('pie-chart-view');
+            const barChartDiv = document.getElementById('bar-chart-view');
+            const columnChartDiv = document.getElementById('column-chart-view');
+
+            function hideAllCharts() {
+                pieChartDiv.classList.remove('active');
+                barChartDiv.classList.remove('active');
+                columnChartDiv.classList.remove('active');
+            }
+
+            function switchChart(chartType) {
+                hideAllCharts(); // Hide all containers first
+
+                if (chartType === 'pie') {
+                    pieChartDiv.classList.add('active');
+                    drawPieChart();
+                } else if (chartType === 'bar') {
+                    barChartDiv.classList.add('active');
+                    drawBarChart();
+                } else if (chartType === 'column') {
+                    columnChartDiv.classList.add('active');
+                    drawColumnChart();
+                }
+            }
+
+            selector.addEventListener('change', function () {
+                switchChart(this.value);
+            });
+        });
+    </script>
+
+    <style>
+ 
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR  -->
+    <section class="navbar-main">
+        <div class="navbar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <a href="#"><img src="logo.jpg" alt=""></a>
+                </div>
+                <div class="logo-note">
+                    <a href="">WasteIQ</a>
+                </div>
+            </div>
+            <div class="nav-note">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="complaint_portal.html">Complain Portal</a>
+                <a href="index.html#About">Service</a>
+                <a href="recycling_guide.html">Awareness tips</a>
+                <a href="index.html#contact">Contact Us</a>
+            </div>
+            <div class="nav-right">
+                <div class="user-name">
+                    User-1
+                </div>
+                <div class="user-pic">
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="main">
+        <div class="main-1">
+            Citizen Dashboard
+        </div>
+        <div class="main-2">
+            <div class="date-info">
+                <div class="date-row">
+                    <span class="date-label">Date :</span>
+                    <span class="date-value">29.11.2025</span>
+                </div>
+                <div class="date-row">
+                    <span class="date-label">Last Collected :</span>
+                    <span class="date-value">25.11.2025</span>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <div class="nav-item">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Complaint/Suggestion</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span>News</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </div>
+                <div class="nav-item">
+                    <div class="notification-wrapper">
+                        <i class="fa-solid fa-bell"></i>
+                        <div class="notification-dot"></div>
+                    </div>
+                    <span>Notification</span>
+                </div>
+            </div>
+        </div>
+        <div class="main-3">
+            <div class="main-3-left">
+                Dashboard:
+            </div>
+            <a href="guide.html">
+                <div class="main-3-right">
+                    Recycling Guide
+                </div>
+            </a>
+        </div>
+        <nav class="tab-container">
+            <a href="#" class="tab-item active">Real-time</a>
+            <a href="#" class="tab-item">Week</a>
+            <a href="#" class="tab-item">Month</a>
+            <a href="#" class="tab-item">Custom</a>
+        </nav>
+        <div class="main-4">
+            <div class="dashboard-container">
+                <div class="composition-analysis">
+                    <div class="composition-header">
+                        <div class="header-title">Waste Composition Analysis</div>
+                    </div>
+                    <div class="graph-container">
+
+                        <div class="header-row">
+                            <div>
+                                <div class="main-title">Waste Composition Analysis</div>
+                                <div class="underline"></div>
+                            </div>
+
+                            <div class="dropdown-selector">
+                                <select id="chart-selector">
+                                    <option value="pie">Pie Chart</option>
+                                    <option value="bar">Bar Graph</option>
+                                    <option value="column">Column Chart</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="pie-chart-view" class="chart-view active">
+                            <div id="piechart-container" style="width: 100%; height: 350px;"></div>
+                        </div>
+
+                        <div id="bar-chart-view" class="chart-view">
+                            <div id="bar-chart-container" style="width: 100%; height: 350px;"></div>
+                        </div>
+
+                        <div id="column-chart-view" class="chart-view">
+                            <div id="column-chart-container" style="width: 100%; height: 350px;"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="reduction-ideas">
+                        <h3>Waste Reduction Ideas Powered by AI 💡</h3>
+                        <p>Get targeted advice on how to reduce your specific waste types (Wet and Dry waste, 80% of
+                            total).</p>
+                        <button class="generate-btn">Generate Personalized Tips ⬇️</button>
+                        <p class="tip-note">Click the button above to generate grounded, up-to-date waste reduction
+                            strategies.</p>
+                    </div>
+                </div>
+
+                <div class="bin-fill-levels">
+                    <div class="header-title">Bin Fill Levels</div>
+
+                    <div class="bin-level-item">
+                        <div class="bin-label-row">
+                            <span>Wet Bin</span>
+                            <span class="bin-percentage wet">45% Full</span>
+                        </div>
+                        <div class="bin-bar-wrapper">
+                            <div class="bin-bar wet-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="bin-level-item">
+                        <div class="bin-label-row">
+                            <span>Dry Bin</span>
+                            <span class="bin-percentage dry">35% Full</span>
+                        </div>
+                        <div class="bin-bar-wrapper">
+                            <div class="bin-bar dry-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="bin-level-item">
+                        <div class="bin-label-row">
+                            <span>E-Waste</span>
+                            <span class="bin-percentage e-waste">5% Full</span>
+                        </div>
+                        <div class="bin-bar-wrapper">
+                            <div class="bin-bar e-waste-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="bin-level-item">
+                        <div class="bin-label-row">
+                            <span>Plastic</span>
+                            <span class="bin-percentage plastic">15% Full</span>
+                        </div>
+                        <div class="bin-bar-wrapper">
+                            <div class="bin-bar plastic-bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leaderboard">
+                    <div class="leaderboard-title">Leaderboard</div>
+
+                    <div class="leaderboard-item">
+                        <span class="rank">1.</span>
+                        <span class="name">K. M********</span>
+                        <span class="score">98679</span>
+                    </div>
+                    <div class="leaderboard-item">
+                        <span class="rank">2.</span>
+                        <span class="name">Y. YYYYYYYY</span>
+                        <span class="score">96003</span>
+                    </div>
+                    <div class="leaderboard-item">
+                        <span class="rank">3.</span>
+                        <span class="name">Z. ZZZZZZZZ</span>
+                        <span class="score">89967</span>
+                    </div>
+
+                    <div class="leaderboard-item user-highlight">
+                        <span class="rank">10.</span>
+                        <span class="name">Soumyadeep Das</span>
+                        <span class="score">69879</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

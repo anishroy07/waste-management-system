@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track</title>
+    <link rel="stylesheet" href="waste-thingsStyle.css">
+
+</head>
+
+<body>
+    <!-- NAVBAR  -->
+    <section class="navbar-main">
+        <div class="navbar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <a href="index.html"><img src="LOGO_WasteIq.jpg" alt=""></a>
+                </div>
+                <div class="logo-note">
+                    <a href="">WasteIQ</a>
+                </div>
+            </div>
+            <div class="nav-note">
+                <!-- <a href="">Dashboard</a> -->
+                <a href="">Complain Portal</a>
+                <a href="">Service</a>
+                <a href="">Awareness tips</a>
+                <a href="">Contact Us</a>
+            </div>
+
+        </div>
+    </section>
+    <!-- Waste Things  -->
+    <div class="container">
+
+        <div class="header">
+            <h2>Ward No.</h2>
+            <select>
+                <option>25</option>
+                <option>26</option>
+                <option>27</option>
+            </select>
+        </div>
+
+        <!-- Waste Items -->
+        <div class="waste-box">
+            <label><input type="checkbox" id="box" style="height: 20px; width: 20px;"> Dry Waste :</label>
+            <input type="number" placeholder="0%">
+        </div>
+
+        <div class="waste-box">
+            <label><input type="checkbox" id="box" style="height: 20px; width: 20px;"> Wet Waste :</label>
+            <input type="number" placeholder="0%">
+        </div>
+
+        <div class="waste-box">
+            <label><input type="checkbox" id="box" style="height: 20px; width: 20px;"> Plastic Waste :</label>
+            <input type="number" placeholder="0%">
+        </div>
+
+        <div class="waste-box">
+            <label><input type="checkbox" id="box" style="height: 20px; width: 20px;"> Medical Waste :</label>
+            <input type="number" placeholder="0%">
+        </div>
+
+        <div class="waste-box">
+            <label><input type="checkbox" id="box" style="height: 20px; width: 20px;"> E-Waste :</label>
+            <input type="number" placeholder="0%">
+        </div>
+
+<script>
+    // Select all checkboxes
+    const checkboxes = document.querySelectorAll("#box");
+
+    checkboxes.forEach(cb => {
+      cb.addEventListener("change", function () {
+        const parentBox = this.closest(".waste-box"); // find its parent div
+        if (this.checked) {
+          parentBox.style.backgroundColor = "lightgreen";
+        } else {
+          parentBox.style.backgroundColor = "lightgray";
+        }
+      });
+    });
+  </script>
+
+
+        <!-- Remarks Section -->
+        <div class="remarks">
+            <h3>Remarks:</h3>
+            <textarea placeholder="Provide any remarks about :"></textarea>
+        </div>
+
+        <button class="btn">Submit</button>
+
+    </div>
+
+
+</body>
+
+</html>

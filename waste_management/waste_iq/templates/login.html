@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login UI</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #c2fae4ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      width: 360px;
+      padding: 60px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    p.subtitle {
+      margin: 0 0 25px;
+      color: #555;
+      font-size: 16px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 30px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 12px;
+      background: #007bff;
+      border: none;
+      border-radius: 30px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .btn-login:hover {
+      background: #0068da;
+    }
+
+    .footer-text {
+      margin-top: 15px;
+      font-size: 14px;
+      text-align: center;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>WasteIQ</h1>
+    <p class="subtitle">Sign Up to Get Started</p>
+
+    <div class="input-group">
+      <input type="email" id="email" placeholder="Email Address" />
+    </div>
+
+    <div class="input-group">
+      <input type="password" id="password" placeholder="Password" />
+    </div>
+
+    <button class="btn-login" onclick="login()">Login</button>
+
+    <p class="footer-text">Forgot Password</p>
+
+    <div class="signin-link">
+      Don't have an account? <a href="signup.html">Sign In</a>
+    </div>
+  </div>
+
+  <!-- JavaScript Login Script -->
+  <script>
+    function login() {
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      // Hard-coded login credentials
+      const correctEmail = "admin@gmail.com";
+      const correctPassword = "12345";
+
+      if (email === "" || password === "") {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      if (email === correctEmail && password === correctPassword) {
+        alert("Login Successful!");
+        window.location.href = "dashboard.html"; // redirect after login
+      } else {
+        alert("Invalid Email or Password.");
+      }
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,671 @@
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    height: 75px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 16.83%, rgba(95, 218, 70, 0.2) 58.65%),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0%, rgba(105, 220, 82, 0.4) 100%);
+
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0px 4px 8.1px 15px rgba(13, 255, 0, 0.25);
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon a img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 12px 1px rgba(14, 13, 13, 0.3);
+}
+
+.logo-note a {
+    font-size: 25px;
+    color: #1A1A1A;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+.nav-note {
+    display: flex;
+    align-items: center;
+}
+
+.nav-note a {
+    margin: 0 17px;
+    font-weight: 400;
+    color: #1A1A1A;
+    cursor: pointer;
+}
+
+.nav-note a:hover {
+    color: rgb(231, 0, 0);
+}
+
+.user-name {
+    background-color: rgba(8, 0, 0, 1);
+    width: 143px;
+    height: 25px;
+    border-radius: 13px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-pic {
+    width: 45px;
+    height: 45px;
+    background-color: aquamarine;
+    background-image: url(user.jpg);
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.nav-right {
+    display: flex;
+    width: 250px;
+    justify-content: space-around;
+    align-items: center;
+}
+/* MAIN */
+/* body{
+        background-image: url(img2.jpeg);
+    background-size: cover;
+} */
+.main {
+    width: 100%;
+    height: 927px;
+    background-image: url(img2.jpeg);
+    background-size: cover;
+}
+
+.main-1 {
+    font-size: 32px;
+    font-weight: 600;
+    width: 320px;
+    height: 35px;
+    opacity: 1;
+    margin-left: 100px;
+    padding-top: 15px;
+}
+
+.main-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 600px;
+    margin-top: 20px;
+}
+
+/* Left Side: Date Information */
+.date-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+    color: #1a1a1a;
+}
+
+.date-row {
+    display: flex;
+    align-items: center;
+}
+
+.date-label {
+    font-weight: 800;
+    margin-right: 5px;
+}
+
+.date-value {
+    font-weight: 600;
+}
+
+/* Right Side: Navigation Menu */
+.nav-menu {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.nav-item:hover {
+    color: #000;
+}
+
+.nav-item i {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.nav-item span {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* Notification Icon Specifics */
+.notification-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.notification-dot {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    background-color: #ff3b30;
+    /* Red dot */
+    border-radius: 50%;
+    border: 1px solid #fff;
+    /* White border helps it pop */
+}
+
+/* Responsive tweak for smaller screens */
+@media (max-width: 768px) {
+    .header-bar {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+        background: linear-gradient(180deg, #ffffff 40%, #c5e2a2 100%);
+    }
+
+    .nav-menu {
+        width: 100%;
+        justify-content: space-around;
+    }
+}
+
+.main-3 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.main-3-left {
+    font-weight: 700;
+    font-size: 20px;
+    font-style: Bold;
+    margin-left: 19px;
+}
+
+.main-3-right {
+    width: 175px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgba(25, 165, 173, 0.53);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+
+/* Container for the tabs */
+.tab-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #d4d4d4;
+    padding-left: 20px;
+}
+
+.tab-item {
+    text-decoration: none;
+    color: #6c757d;
+    /* Gray for inactive tabs */
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.tab-item:hover {
+    color: #333;
+}
+
+.tab-item.active {
+    color: #2ecc71;
+    /* The specific green text color */
+    font-weight: 600;
+}
+
+.tab-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2ecc71;
+    border-radius: 2px 2px 0 0;
+}
+
+@media (max-width: 600px) {
+    .tab-container {
+        background: linear-gradient(180deg, #ffffff 50%, #ccebad 50%);
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    .tab-item {
+        padding: 0 5px;
+        font-size: 13px;
+    }
+}
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: hsl(0, 0%, 100%);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  
+}
+
+/* Titles */
+.header-title {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 0;
+    color: #333;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+/* --- 1. Waste Composition Section (Grid Area: Top Left) --- */
+.composition-analysis {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    /* Spans both rows on the left */
+}
+
+.composition-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.composition-header .header-title {
+    /* Green line for the main title */
+    border-bottom: 3px solid #66bb6a;
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+.chart-selector {
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+.composition-content {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/* Visual representation of the Pie Chart using a circle */
+.pie-chart {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+    /* Creating the visual slices using conic-gradient */
+    background: conic-gradient(#66bb6a 0%, #66bb6a 45%,
+            /* Wet Waste (45%) */
+            #ffa726 45%, #ffa726 80%,
+            /* Dry Waste (35%) */
+            #42a5f5 80%, #42a5f5 93%,
+            /* Plastic (13%) */
+            #ef5350 93%, #ef5350 100%
+            /* E-Waste (7%) - Adjusted to fit 100% */
+        );
+    position: relative;
+}
+
+/* Inner white circle (donut hole) */
+.pie-chart::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.pie-chart span {
+    z-index: 10;
+    display: block;
+    text-align: center;
+    line-height: 1.2;
+    font-size: 14px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.legend-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* --- 2. Waste Reduction Ideas (Grid Area: Bottom Left) --- */
+.reduction-ideas {
+    grid-column: 1 / 2;
+    /* Note: This grid area is actually handled by the main span of 'composition-analysis',
+               so we just style the inner box */
+    background-color: #fff9e6;
+    /* Light yellow background */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 1px solid #f9e6a6;
+}
+
+.reduction-ideas h3 {
+    font-size: 16px;
+    color: #cc8400;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.reduction-ideas p {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.generate-btn {
+    background-color: #ffa500;
+    /* Orange button */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s;
+    margin-bottom: 10px;
+}
+
+.generate-btn:hover {
+    background-color: #cc8400;
+}
+
+.tip-note {
+    font-size: 11px;
+    color: #777;
+}
+
+/* --- 3. Bin Fill Levels (Grid Area: Top Right) --- */
+.bin-fill-levels {
+    grid-row: 1 / 2;
+    height: 252px;
+    width: 485px;
+}
+
+.bin-fill-levels .header-title {
+    border-bottom: 3px solid #66bb6a;
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+.bin-level-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.bin-label-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.bin-bar-wrapper {
+    background-color: #e0e0e0;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bin-bar {
+    height: 100%;
+}
+
+/* Bar Colors and Widths */
+.wet-bar {
+    width: 45%;
+    background-color: #66bb6a;
+    /* Green */
+}
+
+.dry-bar {
+    width: 35%;
+    background-color: #ffa726;
+    /* Orange */
+}
+
+.e-waste-bar {
+    width: 5%;
+    background-color: #ef5350;
+    /* Red */
+}
+
+.plastic-bar {
+    width: 15%;
+    background-color: #42a5f5;
+    /* Blue */
+}
+
+.bin-percentage {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.bin-percentage.wet {
+    color: #66bb6a;
+}
+
+.bin-percentage.dry {
+    color: #ffa726;
+}
+
+.bin-percentage.e-waste {
+    color: #ef5350;
+}
+
+.bin-percentage.plastic {
+    color: #42a5f5;
+}
+
+
+/* --- 4. Leaderboard (Grid Area: Bottom Right) --- */
+.leaderboard {
+    background-color: #e8f5e9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-top: 10px;
+    height: 200px;
+    width: 485px;
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+}
+
+.leaderboard-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(37, 211, 102, 1);
+    margin-bottom: 15px;
+}
+
+.leaderboard-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Specific styling for the user's item (Soumyadeep Das) */
+.leaderboard-item.user-highlight {
+    background-color:rgba(37, 211, 102, 1);
+    /* Highlight background green */
+    color: white;
+    padding: 10px 10px;
+    margin: 5px -10px;
+    /* Extend highlight to edges */
+    border-radius: 4px;
+}
+
+.leaderboard-item.user-highlight .rank,
+.leaderboard-item.user-highlight .name,
+.leaderboard-item.user-highlight .score {
+    color: white;
+    /* Ensure text is white */
+}
+
+.leaderboard-item .rank {
+    width: 5%;
+    text-align: left;
+}
+
+.leaderboard-item .name {
+    width: 70%;
+    text-align: left;
+}
+
+.leaderboard-item .score {
+    width: 25%;
+    text-align: right;
+}
+        /* --- CSS for layout and header (from previous response) --- */
+        .graph-container {
+            max-width: 800px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+
+        /* Header and Selector Styles */
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .main-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .underline {
+            border-bottom: 3px solid #66bb6a;
+            width: 70%;
+            margin-top: 5px;
+        }
+
+        .dropdown-selector {
+            position: relative;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .dropdown-selector select {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 14px;
+            padding-right: 15px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        .dropdown-selector::after {
+            content: '▼';
+            font-size: 10px;
+            position: absolute;
+            top: 50%;
+            right: 5px;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        /* Chart Display Management */
+        .chart-view {
+            display: none;
+            /* Hidden by default */
+            padding: 20px 0;
+            border-top: 1px solid #eee;
+        }
+
+        .chart-view.active {
+            display: block;
+        }

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #b9ffdc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.signup-container {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 380px; /* Adjust based on image size */
+    text-align: center;
+}
+
+/* Header Styling */
+.signup-header h1 {
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.signup-header p {
+    color: #6c757d;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* Input Group Styling */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    outline: none;
+    font-size: 16px;
+    transition: border-bottom-color 0.3s;
+}
+
+/* Focus and Active State for Input */
+.input-group input:focus {
+    border-bottom-color: #007bff;
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: #adb5bd;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+/* Move label up when input is focused or filled */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -15px;
+    font-size: 12px;
+    color: #6c757d;
+}
+
+/* Main Sign Up Button */
+.sign-up-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* Blue color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.sign-up-button:hover {
+    background-color: #0056b3;
+}
+
+/* Remember Me Checkbox */
+.remember-me {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 40px;
+    padding-left: 2px;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    accent-color: #007bff; /* Colors the checkbox when checked */
+}
+
+/* Divider Text (ACCESS QUICKLY) */
+.divider {
+    position: relative;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.access-text {
+    font-size: 12px;
+    color: #adb5bd;
+    font-weight: 600;
+}
+
+/* Social Login Buttons */
+.social-login {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.social-button {
+    flex: 1;
+    padding: 10px 5px;
+    background-color: transparent;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.social-button:hover {
+    border-color: #6c757d;
+}
+
+.social-button.google,
+.social-button.linkedin,
+.social-button.sso {
+    color: #007bff; /* Blue text color for social buttons */
+    border-color: #ced4da;
+}
+
+/* Sign In Link at the bottom */
+.signin-link {
+    font-size: 14px;
+    color: #6c757d;
+    margin-top: 15px;
+}
+
+.signin-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signin-link a:hover {
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-header">
+            <h1>Sign up</h1>
+            <p>Sign up to continue</p>
+        </div>
+
+        <form class="signup-form">
+            <div class="input-group">
+                <input type="text" id="name" required>
+                <label for="name">Name</label>
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="email" required>
+                <label for="email">Password</label>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="password" required>
+                <label for="password">Confirm Password</label>
+            </div>
+
+            <button type="submit" class="sign-up-button">Sign up</button>
+
+            <div class="remember-me">
+                <input type="checkbox" id="remember">
+                <label for="remember">Remember me</label>
+            </div>
+        </form>
+
+        <div class="divider">
+            <span class="access-text">ACCESS QUICKLY</span>
+        </div>
+
+        <div class="social-login">
+            <button class="social-button google">Google</button>
+            <button class="social-button linkedin">LinkedIn</button>
+            <button class="social-button sso">SSO</button>
+        </div>
+
+        <div class="signin-link">
+            Already have an account? <a href="login.html">Log in</a>
+        </div>
+    </div>
+</body>
+</html>

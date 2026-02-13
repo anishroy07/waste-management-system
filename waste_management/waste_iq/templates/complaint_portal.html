@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complain Bar</title>
+    <link rel="stylesheet" href="complainStyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- NAVBAR  -->
+    <section class="navbar-main">
+        <div class="navbar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <a href="index.html"><img src="logo.jpg" alt=""></a>
+                </div>
+                <div class="logo-note">
+                    <a href="">WasteIQ</a>
+                </div>
+            </div>
+            <div class="nav-note">
+                <!-- <a href="dashboard.html">Dashboard</a> -->
+                <a href="complaint_portal.html">Complain Portal</a>
+                <a href="index.html#About">Service</a>
+                <a href="guide.html">Awareness tips</a>
+                <a href="index.html#contact ">Contact Us</a>
+            </div>
+            <!-- <div class="sign-in">
+                <button class="btn1" onclick="sign">Sign In</button>
+            </div> -->
+        </div>
+    </section>
+    <section class="all">
+    <!-- DATE BAR  -->
+    <!-- <section class="date-bar">
+        <div class="date-bar-left">
+            <p><span>Date :</span>30.11.2025</p>
+            <p><span>Last Collected :</span>25.11.2025</p>
+        </div>
+        <div class="date-bar-right">
+            <div class="box">
+                <i class="fa-regular fa-file"></i>
+                <p>Complaint</p>
+            </div>
+            <div class="box">
+                <i class="fa-regular fa-newspaper"></i>
+                <p>News</p>
+            </div>
+            <div class="box">
+                <i class="fa-solid fa-gear"></i>
+                <p>Settings</p>
+            </div>
+            <div class="box">
+                <i class="fa-solid fa-bell"></i>
+                <p>Notification</p>
+            </div>
+        </div>
+    </section> -->
+
+    <div class="main-2">
+            <div class="date-info">
+                <div class="date-row">
+                    <span class="date-label">Date :</span>
+                    <span class="date-value">29.11.2025</span>
+                </div>
+                <div class="date-row">
+                    <span class="date-label">Last Collected :</span>
+                    <span class="date-value">25.11.2025</span>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <div class="nav-item">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Complaint/Suggestion</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span>News</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </div>
+                <div class="nav-item">
+                    <div class="notification-wrapper">
+                        <i class="fa-solid fa-bell"></i>
+                        <div class="notification-dot"></div>
+                    </div>
+                    <span>Notification</span>
+                </div>
+            </div>
+        </div>
+    <!-- FORM  -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #5B6B55;
+            font-family: 'Poppins', sans-serif;
+           
+        }
+
+        .form-box {
+            width: 90%;
+            max-width: 900px;
+            background: #70806A;
+            padding: 30px;
+            border-radius: 10px;
+            border: 3px dotted #ccc;
+            color: white;
+            margin: 40px auto;
+            
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        label span {
+            color: red;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            background: #DDE3EE;
+            font-size: 15px;
+        }
+
+        textarea {
+            height: 95px;
+            resize: none;
+        }
+
+        .upload-box {
+            background: #DDE3EE;
+            border: 2px dashed #aaa;
+            width: 100%;
+            height: 120px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 200px;
+            display: block;
+            margin: 20px auto 0;
+            padding: 12px;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <div class="form-box">
+
+        <div class="form-row">
+            <div class="form-group">
+                <label>Full Name <span>*</span></label>
+                <input type="text" placeholder="Jhon Roy">
+            </div>
+
+            <div class="form-group">
+                <label>Subject <span>*</span></label>
+             <input type="text" placeholder="Subject">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label>Mobile No. <span>*</span></label>
+                <input type="text" placeholder="+91 1234567890">
+            </div>
+
+            <div class="form-group">
+                <label>Describe <span>*</span></label>
+                <textarea placeholder="Provide detailed information your complain"></textarea>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label>Email <span>*</span></label>
+                <input type="email" placeholder="jhon@example.com">
+            </div>
+        </div>
+
+        <label style="font-size: 20px;">Attachment (Images) <span>*</span></label>
+        <div class="upload-box">
+            <p>📤 Click to upload images</p>
+            <p>Max file size: 10MB</p>
+        </div>
+
+        <button class="submit-btn">Submit Report</button>
+
+    </div>
+
+</section>
+
+</body>
+
+</html>
